@@ -1,6 +1,6 @@
 <h1 align="center">offline-geocode-city</h1>
 
-> 217 kB, tiny offline reverse geocoding library that works anywhere, browser, Node.js, web worker. High performance (S2 cell based). Looks up country and nearest city, given GPS coordinates
+> 217 kB, tiny offline reverse geocoding library that works anywhere, browser, Node.js, web worker. High performance ([S2 cell](https://s2geometry.io/) based). Locally looks up country and nearest city, given GPS coordinates.
 
 <h2 align="center">Features</h2>
 
