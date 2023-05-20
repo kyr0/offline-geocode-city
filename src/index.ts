@@ -50,50 +50,6 @@ export const getBaseDataCities = () => decodeBaseDataCities(decompressFromURI(BA
 
 const CELL_CITY_MAP = getBaseDataCities()
 
-interface GeoPoint {
-    lat: number;
-    lng: number;
-}
-
-function toRadian(degree: number): number {
-    return degree * Math.PI / 180;
-}
-
-function toDegree(radian: number): number {
-    return radian * 180 / Math.PI;
-}
-
-function getPointsInRadius(center: GeoPoint): GeoPoint[] {
-    let radius = 27; // in km
-    let numSlices = 8;
-    let points: GeoPoint[] = [];
-
-    for (let i = 0; i < numSlices; i++) {
-        let bearing = i * 360 / numSlices;
-        let newPoint = getDestinationPoint(center, radius, bearing);
-        points.push(newPoint);
-    }
-
-    return points;
-}
-
-function getDestinationPoint(startPoint: GeoPoint, distance: number, bearing: number): GeoPoint {
-    const R = 6371; // Earth radius in km
-    const distanceAsRadian = distance / R; // distance as radian
-    const bearingAsRadian = toRadian(bearing);
-
-    let lat1 = toRadian(startPoint.lat);
-    let lon1 = toRadian(startPoint.lng);
-
-    let lat2 = Math.asin(Math.sin(lat1) * Math.cos(distanceAsRadian) + Math.cos(lat1) * Math.sin(distanceAsRadian) * Math.cos(bearingAsRadian));
-    let lon2 = lon1 + Math.atan2(Math.sin(bearingAsRadian) * Math.sin(distanceAsRadian) * Math.cos(lat1), Math.cos(distanceAsRadian) - Math.sin(lat1) * Math.sin(lat2));
-
-    // Normalize lon2 within -180 to +180 degree range
-    lon2 = (lon2 + 3 * Math.PI) % (2 * Math.PI) - Math.PI;
-
-    return { lat: toDegree(lat2), lng: toDegree(lon2) };
-}
-
 export const getNearestCity = (lat: number, lng: number): ReverseGeocodeResult => {
 
     const localCell = S2.latLngToKey(lat, lng, 8)
