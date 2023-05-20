@@ -8,8 +8,8 @@
 - ✅ Works in all JS environments (browser, Node.js, service worker etc.)
 - ✅ Not only Country and ISO2, but also nearest city geocoded
 - ✅ Only `217 kB` nano sized (ESM, gizpped) (alternatives are ~`20 MiB`)
-- ✅ World record smallest size for city reverse geocoding
-- ✅ World record performance for reverse geocoding using S2 cell
+- ✅ Smallest library size for city reverse geocoding on NPM
+- ✅ Best performance for reverse geocoding using S2 cell on NPM
 - ✅ Lookup time (on M1 Max): `0.035 ms` (**!**) (direct cell hit), `0.11 ms` (2nd order range hit),  `4.87 ms` (worst case)
 - ✅ Available as a simple API
 - ✅ Tree-shakable and side-effect free
