@@ -1,0 +1,60 @@
+{
+  "name": "offline-geocode-city",
+  "keywords": [
+    "geocoding",
+    "offline",
+    "isomorph",
+    "browser",
+    "nodejs",
+    "webworker",
+    "fast",
+    "small",
+    "s2",
+    "gps",
+    "city",
+    "country",
+    "iso2"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "url": "git+https://github.com/kyr0/offline-geocode-city.git",
+    "type": "git"
+  },
+  "author": "Aron Homberg <info@aron-homberg.de>",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js"
+    }
+  },
+  "module": "./dist/index.esm.js",
+  "main": "./dist/index.cjs.js",
+  "types": "./dist/index.esm.d.ts",
+  "files": [
+    "dist"
+  ],
+  "description": "217 kB, tiny offline reverse geocoding library that works anywhere, browser, Node.js, web worker. High performance (S2 cell based). Looks up country and nearest city, given GPS coordinates",
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "@jsheaven/easybuild": "^1.2.9",
+    "chokidar": "^3.5.3",
+    "csv-parse": "^5.3.10",
+    "lz-ts": "^1.1.2",
+    "s2-geometry": "^1.2.10"
+  },
+  "scripts": {
+    "test": "ts-node --esm ./src/test/nearest-city.ts",
+    "build": "ts-node --esm ./build.ts",
+    "postbuild": "yarn codegen",
+    "codegen": "ts-node --esm ./dist/codegen.esm.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
