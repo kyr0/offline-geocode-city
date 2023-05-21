@@ -63,3 +63,19 @@ const position = await getLocation()
     console.log('nearestCity', nearestCity)
 }
 ```
+
+<h3 align="center">License</h3>
+
+The license (MIT) of this library applies to the program code, not the data.
+
+This library makes use of [S2 cell](https://github.com/google/s2geometry) geometry. S2 cell geometry is originally licensed under Apache-2.0 license.
+
+The specific [implementation used here](https://www.npmjs.com/package/s2-geometry) is licensed under the terms of MIT or Apache-2.0 license.
+
+<h3 align="center">Geocoded location data</h3>
+
+The "United Nations Code for Trade and Transport Locations" is commonly more known as "UN/LOCODE". Although managed and maintained by the UNECE, it is the product of a wide collaboration in the framework of the joint trade facilitation effort undertaken within the United Nations.
+
+Initiated within the UNECE Working Party on Trade Facilitation, UN/LOCODE is based on a code structure set up by UN/ECLAC and a list of locations originating in UN/ESCAP, developed in UNCTAD in co-operation with transport organisations like IATA and the ICS and with active contributions from national governments and commercial bodies. Its first issue in 1981 provided codes to represent the names of some 8.000 locations in the world.
+
+Currently, UN/LOCODE includes over 103,034 locations in 249 countries and territories. It is used by most major shipping companies, by freight forwarders and in the manufacturing industry around the world. It is also applied by national governments and in trade related activities, such as statistics where it is used by the European Union, by the UPU for certain postal services, etc
